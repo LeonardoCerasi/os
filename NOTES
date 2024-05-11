@@ -70,7 +70,7 @@ The stack:
 Interrupts
 =======================================
 
-AN interrupt is a signal which makes the processor stop what it's doing, in order to handle that signal
+An interrupt is a signal which makes the processor stop what it's doing, in order to handle that signal
 
 Can be triggered by:
 - excpetion (dividing by zero, segmentation fault, page fault, etc...)

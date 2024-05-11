@@ -6,7 +6,7 @@ How a computer starts up
 
 1. BIOS is copied from a ROM chip into RAM
 2. BIOS starts executing code 
-   - initilizes hardware
+   - initializes hardware
    - run some tests (POST = Power-on self test)
 3. BIOS searches for an operating system to start
 4. BIOS loads and starts the operating system
@@ -50,7 +50,8 @@ Referencing a memory location
 segment:[base + index * scale + displacement]
 
 All fields are optional:
-- segment: CSM DS, ES, FS, GS, SS (DS if unspecified)
+- segment: CSM DS, ES, FS, GS, SS
+           if unspecified: SS when base is BP, otherwise DS
 - base: (16 bits) BP/BX
 	(32/64 bits) any general purpose register
 - index: (16 bits) SI/DI
@@ -62,7 +63,7 @@ All fields are optional:
 
 The stack:
 - memory is accessed in a LIFO (last in, first out) manner using push and pop
-- used to save the return addess when calling functions
+- used to save the return address when calling functions
 
 
 
@@ -73,8 +74,8 @@ Interrupts
 An interrupt is a signal which makes the processor stop what it's doing, in order to handle that signal
 
 Can be triggered by:
-- excpetion (dividing by zero, segmentation fault, page fault, etc...)
-- hardware (keyboard key pressed/released, timer tick, disk controller finisched an operation, etc...)
+- exception (dividing by zero, segmentation fault, page fault, etc...)
+- hardware (keyboard key pressed/released, timer tick, disk controller finished an operation, etc...)
 - software (through the INT instruction)
 
 Examples of BIOS interrupts:
